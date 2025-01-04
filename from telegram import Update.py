@@ -70,3 +70,21 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+from flask import Flask, request
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler
+
+app = Flask(__name__)
+
+application = ApplicationBuilder().token(TOKEN).build()
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    # Process incoming updates from Telegram
+    update = Update.de_json(request.get_json(), application.bot)
+    application.process_update(update)
+    return "OK", 200
+
+if __name__ == "__main__":
+    app.run(port=5000)
