@@ -4,8 +4,6 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Cal
 
 import os
 
-app = FastAPI()
-
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_CHAT_ID = os.getenv("ADMIN_CHAT_ID")  # Set this as an environment variable
 bot = Bot(token=BOT_TOKEN)
