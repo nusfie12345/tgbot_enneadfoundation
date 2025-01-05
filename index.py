@@ -13,6 +13,7 @@ bot = Bot(token=BOT_TOKEN)
 # Application setup
 application = ApplicationBuilder().token(BOT_TOKEN).build()
 
+app = FastAPI()
 
 @app.post("/")
 async def handle_webhook(request: Request):
