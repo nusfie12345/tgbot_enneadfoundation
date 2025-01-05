@@ -1,1 +1,4 @@
-python-telegram-bot==20.0
+fastapi
+python-telegram-bot
+uvicorn
+
